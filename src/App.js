@@ -7,7 +7,7 @@ import images from "./images.json";
 class App extends Component {
   // Setting this.state.images to the images json array
   state = {
-    images,
+    "images": images,
   };
 
   // Map over this.state.friends and render a FriendCard component for each friend object

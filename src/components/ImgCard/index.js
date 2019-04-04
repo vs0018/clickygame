@@ -1,9 +1,8 @@
-import React from "react";
-import "./style.css";
+import React, { Component } from "react";
+// import "./style.css";
 
-// By extending the React.Component class, Counter inherits functionality from it
-class ImgCard extends React.Component {
-  // Setting the initial state of the Counter component
+class ImgCard extends Component {
+  // Setting this.state.images to the images json array
   state = {
     count: 2
   };
@@ -14,16 +13,19 @@ class ImgCard extends React.Component {
     this.setState({ count: this.state.count - 1 });
   };
 
-  // The render method returns the JSX that should be rendered
-  render(props) {
-    return (
+render() {
+  return (
       <div className="card">
-        <div onClick={this.handleDecrement} className="img-container">
-          <img alt="" src={props.image} />
+        <div className="card-body">
+          <p className="card-text">Click Count: {this.state.count}</p>
+          <div onClick={this.handleDecrement} className="img-container">
+            <img alt="" src={this.props.image} />
+          </div>
         </div>
       </div>
     );
   }
 }
+
 
 export default ImgCard;
