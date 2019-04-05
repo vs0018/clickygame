@@ -61,6 +61,7 @@ class App extends Component {
   handleClick = id => {
     if (this.state.clicked.indexOf(id) === -1) {
       this.handleIncrement();
+      console.log(id);
       this.setState({ clicked: this.state.clicked.concat(id) });
     } else {
       this.resetGame();
@@ -75,9 +76,9 @@ class App extends Component {
           title="Clicky Game"
           score={this.state.currentScore}
           topScore={this.state.topScore}
-          rightWrong={this.state.rightWrong}
+          announce={this.state.announce}
         />
-        <Title>Clicky Game</Title>
+        <Title>Test your memory! Click on the pictures, but only once! If you click on the same picture twice - game over!</Title>
         {this.state.images.map(image => (
           <ImgCard
             key={image.id}
